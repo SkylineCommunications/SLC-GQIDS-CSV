@@ -1,0 +1,22 @@
+﻿<DMSScript options="272">
+	<Name>CSV</Name>
+	<Description></Description>
+	<Type>Automation</Type>
+	<Author>Administrator</Author>
+	<CheckSets>FALSE</CheckSets>
+	<Folder></Folder>
+	<Protocols>
+	</Protocols>
+	<Memory>
+	</Memory>
+	<Parameters>
+	</Parameters>
+	<Script>
+		<Exe id="2" type="csharp">
+			<Value><![CDATA[[Project:CSV_2]]]></Value>
+			<Param type="preCompile">true</Param>
+			<Param type="libraryName">CSV Data Source</Param>
+			<Message></Message>
+		</Exe>
+	</Script>
+</DMSScript>
