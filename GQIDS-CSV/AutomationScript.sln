@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33130.400
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{D5DA8B55-F4AB-4138-8D90-9B90399068BC}"
 EndProject
@@ -15,12 +15,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{9EB84EC4-955E-4139-BC35-A675156B1D76}"
 	ProjectSection(SolutionItems) = preProject
 		Documentation\readme.txt = Documentation\readme.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{B5C556C2-CAF2-4F8D-94FF-27B00AA18D7B}"
-	ProjectSection(SolutionItems) = preProject
-		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
-		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSV", "CSV", "{F04941C1-705A-400F-BE3F-387978AAEFD8}"
@@ -47,7 +41,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B5C556C2-CAF2-4F8D-94FF-27B00AA18D7B} = {D5DA8B55-F4AB-4138-8D90-9B90399068BC}
 		{F04941C1-705A-400F-BE3F-387978AAEFD8} = {E9056D88-32DF-4864-BD82-4BF52B3583EA}
 		{31B5FBFF-8E9A-40A3-B8CD-E5549F20B89E} = {F04941C1-705A-400F-BE3F-387978AAEFD8}
 		{72DE49DC-2575-4E54-9663-26C29EDCEBEC} = {31B5FBFF-8E9A-40A3-B8CD-E5549F20B89E}

@@ -40,35 +40,9 @@
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System">
       <HintPath>C:\Skyline DataMiner\Files\System.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Buffers">
-      <HintPath>C:\Skyline DataMiner\Scripts\Libraries\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics.Vectors">
-      <HintPath>C:\Skyline DataMiner\Files\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics">
-      <HintPath>C:\Skyline DataMiner\Files\System.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>C:\Skyline DataMiner\Scripts\Libraries\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Memory">
-      <HintPath>C:\Skyline DataMiner\Scripts\Libraries\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple">
-      <HintPath>C:\Skyline DataMiner\Files\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="CsvHelper">
-      <HintPath>C:\Skyline DataMiner\Scripts\Libraries\CsvHelper.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="mscorlib" />
-    <AdditionalFiles Include="stylecop.json" />
     <Content Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
@@ -76,14 +50,17 @@
     <Compile Include="CSV_2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CsvHelper">
+      <Version>31.0.0</Version>
+    </PackageReference>
     <PackageReference Include="Skyline.DataMiner.Dev.Automation">
-      <Version>10.3.3</Version>
+      <Version>10.4.6.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties DisLinkId="2" DisProjectType="automationScriptProject" DisLinkedXmlFile="..\CSV.xml" />
+      <UserProperties DisLinkedXmlFile="..\CSV.xml" DisProjectType="automationScriptProject" DisLinkId="2" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

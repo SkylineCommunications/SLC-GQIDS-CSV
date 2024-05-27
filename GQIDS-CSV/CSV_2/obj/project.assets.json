@@ -2,42 +2,116 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.2": {
+      "CsvHelper/31.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.0.0",
+          "Microsoft.CSharp": "4.3.0",
+          "System.Linq.Async": "4.0.0",
+          "System.Memory": "4.5.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
-      "Skyline.DataMiner.Dev.Automation/10.3.3": {
+      "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
         "type": "package",
         "dependencies": {
-          "Skyline.DataMiner.Dev.Common": "10.3.3",
-          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLManagedAutomation": "10.3.3"
+          "Skyline.DataMiner.Dev.Common": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLManagedAutomation": "10.4.6.1"
         }
       },
-      "Skyline.DataMiner.Dev.Common/10.3.3": {
+      "Skyline.DataMiner.Dev.Common/10.4.6.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.2",
           "SharpZipLib": "1.3.3",
-          "Skyline.DataMiner.Files.SLLoggerUtil": "10.3.3",
-          "Skyline.DataMiner.Files.SLNetTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.3.3",
-          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.3.3",
-          "Skyline.DataMiner.Files.protobufnet": "10.3.3"
+          "Skyline.DataMiner.Files.DataMinerMessageBroker.API": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLLoggerUtil": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLNetTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.4.6.1",
+          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.4.6.1",
+          "Skyline.DataMiner.Files.protobufnet": "10.4.6.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -45,7 +119,16 @@
           "System.Xml"
         ]
       },
-      "Skyline.DataMiner.Files.protobufnet/10.3.3": {
+      "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/DataMinerMessageBroker.API.dll": {}
+        },
+        "runtime": {
+          "lib/net462/DataMinerMessageBroker.API.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
@@ -54,7 +137,7 @@
           "lib/net462/protobuf-net.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.3.3": {
+      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/Skyline.DataMiner.Storage.Types.dll": {}
@@ -63,7 +146,7 @@
           "lib/net462/Skyline.DataMiner.Storage.Types.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/SLAnalyticsTypes.dll": {}
@@ -72,7 +155,7 @@
           "lib/net462/SLAnalyticsTypes.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLLoggerUtil/10.3.3": {
+      "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/SLLoggerUtil.dll": {}
@@ -81,71 +164,246 @@
           "lib/net462/SLLoggerUtil.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLManagedAutomation/10.3.3": {
+      "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
         "type": "package",
         "compile": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLNetTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
         "type": "package",
         "compile": {
-          "ref/net462/SLNetTypes.dll": {}
+          "ref/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLNetTypes.dll": {}
+          "lib/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.3.3": {
+      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
         },
         "runtime": {
           "lib/net462/SLProtoBufLibrary.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Linq.Async/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0"
+        },
+        "compile": {
+          "ref/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.6.2/win": {
+      "CsvHelper/31.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.0.0",
+          "Microsoft.CSharp": "4.3.0",
+          "System.Linq.Async": "4.0.0",
+          "System.Memory": "4.5.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
-      "Skyline.DataMiner.Dev.Automation/10.3.3": {
+      "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
         "type": "package",
         "dependencies": {
-          "Skyline.DataMiner.Dev.Common": "10.3.3",
-          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLManagedAutomation": "10.3.3"
+          "Skyline.DataMiner.Dev.Common": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLManagedAutomation": "10.4.6.1"
         }
       },
-      "Skyline.DataMiner.Dev.Common/10.3.3": {
+      "Skyline.DataMiner.Dev.Common/10.4.6.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.2",
           "SharpZipLib": "1.3.3",
-          "Skyline.DataMiner.Files.SLLoggerUtil": "10.3.3",
-          "Skyline.DataMiner.Files.SLNetTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.3.3",
-          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.3.3",
-          "Skyline.DataMiner.Files.protobufnet": "10.3.3"
+          "Skyline.DataMiner.Files.DataMinerMessageBroker.API": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLLoggerUtil": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLNetTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.4.6.1",
+          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.4.6.1",
+          "Skyline.DataMiner.Files.protobufnet": "10.4.6.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -153,7 +411,16 @@
           "System.Xml"
         ]
       },
-      "Skyline.DataMiner.Files.protobufnet/10.3.3": {
+      "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/DataMinerMessageBroker.API.dll": {}
+        },
+        "runtime": {
+          "lib/net462/DataMinerMessageBroker.API.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
@@ -162,7 +429,7 @@
           "lib/net462/protobuf-net.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.3.3": {
+      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/Skyline.DataMiner.Storage.Types.dll": {}
@@ -171,7 +438,7 @@
           "lib/net462/Skyline.DataMiner.Storage.Types.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/SLAnalyticsTypes.dll": {}
@@ -180,7 +447,7 @@
           "lib/net462/SLAnalyticsTypes.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLLoggerUtil/10.3.3": {
+      "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/SLLoggerUtil.dll": {}
@@ -189,71 +456,538 @@
           "lib/net462/SLLoggerUtil.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLManagedAutomation/10.3.3": {
+      "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
         "type": "package",
         "compile": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLNetTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
         "type": "package",
         "compile": {
-          "ref/net462/SLNetTypes.dll": {}
+          "ref/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLNetTypes.dll": {}
+          "lib/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.3.3": {
+      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
         },
         "runtime": {
           "lib/net462/SLProtoBufLibrary.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Linq.Async/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0"
+        },
+        "compile": {
+          "ref/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.2/win-arm64": {
+      "CsvHelper/31.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.0.0",
+          "Microsoft.CSharp": "4.3.0",
+          "System.Linq.Async": "4.0.0",
+          "System.Memory": "4.5.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpZipLib/1.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Skyline.DataMiner.Dev.Common": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLManagedAutomation": "10.4.6.1"
+        }
+      },
+      "Skyline.DataMiner.Dev.Common/10.4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2",
+          "SharpZipLib": "1.3.3",
+          "Skyline.DataMiner.Files.DataMinerMessageBroker.API": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLLoggerUtil": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLNetTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.4.6.1",
+          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.4.6.1",
+          "Skyline.DataMiner.Files.protobufnet": "10.4.6.1"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Xml"
+        ]
+      },
+      "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/DataMinerMessageBroker.API.dll": {}
+        },
+        "runtime": {
+          "lib/net462/DataMinerMessageBroker.API.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net462/_._": {}
+        },
+        "runtime": {
+          "lib/net462/protobuf-net.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/Skyline.DataMiner.Storage.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net462/Skyline.DataMiner.Storage.Types.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net462/SLAnalyticsTypes.dll": {}
+        },
+        "runtime": {
+          "lib/net462/SLAnalyticsTypes.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/SLLoggerUtil.dll": {}
+        },
+        "runtime": {
+          "lib/net462/SLLoggerUtil.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net462/_._": {}
+        },
+        "runtime": {
+          "lib/net462/SLProtoBufLibrary.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Linq.Async/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0"
+        },
+        "compile": {
+          "ref/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.6.2/win-x64": {
+      "CsvHelper/31.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.0.0",
+          "Microsoft.CSharp": "4.3.0",
+          "System.Linq.Async": "4.0.0",
+          "System.Memory": "4.5.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
-      "Skyline.DataMiner.Dev.Automation/10.3.3": {
+      "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
         "type": "package",
         "dependencies": {
-          "Skyline.DataMiner.Dev.Common": "10.3.3",
-          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLManagedAutomation": "10.3.3"
+          "Skyline.DataMiner.Dev.Common": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLManagedAutomation": "10.4.6.1"
         }
       },
-      "Skyline.DataMiner.Dev.Common/10.3.3": {
+      "Skyline.DataMiner.Dev.Common/10.4.6.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.2",
           "SharpZipLib": "1.3.3",
-          "Skyline.DataMiner.Files.SLLoggerUtil": "10.3.3",
-          "Skyline.DataMiner.Files.SLNetTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.3.3",
-          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.3.3",
-          "Skyline.DataMiner.Files.protobufnet": "10.3.3"
+          "Skyline.DataMiner.Files.DataMinerMessageBroker.API": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLLoggerUtil": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLNetTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.4.6.1",
+          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.4.6.1",
+          "Skyline.DataMiner.Files.protobufnet": "10.4.6.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -261,7 +995,16 @@
           "System.Xml"
         ]
       },
-      "Skyline.DataMiner.Files.protobufnet/10.3.3": {
+      "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/DataMinerMessageBroker.API.dll": {}
+        },
+        "runtime": {
+          "lib/net462/DataMinerMessageBroker.API.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
@@ -270,7 +1013,7 @@
           "lib/net462/protobuf-net.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.3.3": {
+      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/Skyline.DataMiner.Storage.Types.dll": {}
@@ -279,7 +1022,7 @@
           "lib/net462/Skyline.DataMiner.Storage.Types.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/SLAnalyticsTypes.dll": {}
@@ -288,7 +1031,7 @@
           "lib/net462/SLAnalyticsTypes.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLLoggerUtil/10.3.3": {
+      "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/SLLoggerUtil.dll": {}
@@ -297,71 +1040,246 @@
           "lib/net462/SLLoggerUtil.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLManagedAutomation/10.3.3": {
+      "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
         "type": "package",
         "compile": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLNetTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
         "type": "package",
         "compile": {
-          "ref/net462/SLNetTypes.dll": {}
+          "ref/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLNetTypes.dll": {}
+          "lib/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.3.3": {
+      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
         },
         "runtime": {
           "lib/net462/SLProtoBufLibrary.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Linq.Async/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0"
+        },
+        "compile": {
+          "ref/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.6.2/win-x86": {
+      "CsvHelper/31.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
+          "Microsoft.Bcl.HashCode": "1.0.0",
+          "Microsoft.CSharp": "4.3.0",
+          "System.Linq.Async": "4.0.0",
+          "System.Memory": "4.5.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/CsvHelper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Microsoft.Bcl.HashCode.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
       "Newtonsoft.Json/13.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpZipLib/1.3.3": {
         "type": "package",
         "compile": {
-          "lib/net45/_._": {}
+          "lib/net45/_._": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
-      "Skyline.DataMiner.Dev.Automation/10.3.3": {
+      "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
         "type": "package",
         "dependencies": {
-          "Skyline.DataMiner.Dev.Common": "10.3.3",
-          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLManagedAutomation": "10.3.3"
+          "Skyline.DataMiner.Dev.Common": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLAnalyticsTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLManagedAutomation": "10.4.6.1"
         }
       },
-      "Skyline.DataMiner.Dev.Common/10.3.3": {
+      "Skyline.DataMiner.Dev.Common/10.4.6.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.2",
           "SharpZipLib": "1.3.3",
-          "Skyline.DataMiner.Files.SLLoggerUtil": "10.3.3",
-          "Skyline.DataMiner.Files.SLNetTypes": "10.3.3",
-          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.3.3",
-          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.3.3",
-          "Skyline.DataMiner.Files.protobufnet": "10.3.3"
+          "Skyline.DataMiner.Files.DataMinerMessageBroker.API": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLLoggerUtil": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLNetTypes": "10.4.6.1",
+          "Skyline.DataMiner.Files.SLProtoBufLibrary": "10.4.6.1",
+          "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types": "10.4.6.1",
+          "Skyline.DataMiner.Files.protobufnet": "10.4.6.1"
         },
         "frameworkAssemblies": [
           "System",
@@ -369,7 +1287,16 @@
           "System.Xml"
         ]
       },
-      "Skyline.DataMiner.Files.protobufnet/10.3.3": {
+      "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+        "type": "package",
+        "compile": {
+          "ref/net462/DataMinerMessageBroker.API.dll": {}
+        },
+        "runtime": {
+          "lib/net462/DataMinerMessageBroker.API.dll": {}
+        }
+      },
+      "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
@@ -378,7 +1305,7 @@
           "lib/net462/protobuf-net.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.3.3": {
+      "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/Skyline.DataMiner.Storage.Types.dll": {}
@@ -387,7 +1314,7 @@
           "lib/net462/Skyline.DataMiner.Storage.Types.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/SLAnalyticsTypes.dll": {}
@@ -396,7 +1323,7 @@
           "lib/net462/SLAnalyticsTypes.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLLoggerUtil/10.3.3": {
+      "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
         "type": "package",
         "compile": {
           "ref/net462/SLLoggerUtil.dll": {}
@@ -405,36 +1332,275 @@
           "lib/net462/SLLoggerUtil.dll": {}
         }
       },
-      "Skyline.DataMiner.Files.SLManagedAutomation/10.3.3": {
+      "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
         "type": "package",
         "compile": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLManagedAutomation.dll": {}
+          "lib/net462/SLManagedAutomation.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLNetTypes/10.3.3": {
+      "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
         "type": "package",
         "compile": {
-          "ref/net462/SLNetTypes.dll": {}
+          "ref/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net462/SLNetTypes.dll": {}
+          "lib/net462/SLNetTypes.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.3.3": {
+      "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
         "type": "package",
         "compile": {
           "lib/net462/_._": {}
         },
         "runtime": {
           "lib/net462/SLProtoBufLibrary.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Linq.Async/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.0.0"
+        },
+        "compile": {
+          "ref/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net461/System.Linq.Async.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
   },
   "libraries": {
+    "CsvHelper/31.0.0": {
+      "sha512": "PypRJq7AugnCJjq6Zu5EqFDTfRv7Gh+MtSH2T/kwiGmg1UHAflq4cE8j3uMkvXSxaayVtcwi+8hC0w+30YzzWA==",
+      "type": "package",
+      "path": "csvhelper/31.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.31.0.0.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net462/CsvHelper.dll",
+        "lib/net462/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net48/CsvHelper.dll",
+        "lib/net48/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/net7.0/CsvHelper.dll",
+        "lib/net7.0/CsvHelper.xml",
+        "lib/net8.0/CsvHelper.dll",
+        "lib/net8.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
+      "sha512": "K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Bcl.HashCode/1.0.0": {
+      "sha512": "iACTGPNnDlUI4Vj2oRIenMRwjDTCPQ8nPgpeD7GI4tCHp3aDIdduXfUY5/Hk2Zj6dZd1X51ayRBAvOuYDl65JQ==",
+      "type": "package",
+      "path": "microsoft.bcl.hashcode/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.HashCode.dll",
+        "lib/net461/Microsoft.Bcl.HashCode.xml",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
+        "microsoft.bcl.hashcode.1.0.0.nupkg.sha512",
+        "microsoft.bcl.hashcode.nuspec",
+        "ref/net461/Microsoft.Bcl.HashCode.dll",
+        "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.CSharp/4.3.0": {
+      "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
+      "type": "package",
+      "path": "microsoft.csharp/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.3.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
     "Newtonsoft.Json/13.0.2": {
       "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
       "type": "package",
@@ -486,38 +1652,54 @@
         "sharpziplib.nuspec"
       ]
     },
-    "Skyline.DataMiner.Dev.Automation/10.3.3": {
-      "sha512": "gkBOJvfVkgHVbjc2jVc4obv25sguwACZ7zAfwUKxUGVBMgYRI+JZT8eh0YE99x/ulGsSa1X2BOJorQH94jPoIQ==",
+    "Skyline.DataMiner.Dev.Automation/10.4.6.1": {
+      "sha512": "JIZoRrAwNLl7QG3rFCr5GIGMhRvabb7TIggM9Qzn4q7cWU5VsSQQstsSBCL2d1Fhc13W7bpbNVIOqgCV4Omo8Q==",
       "type": "package",
-      "path": "skyline.dataminer.dev.automation/10.3.3",
+      "path": "skyline.dataminer.dev.automation/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "docs/README.md",
         "images/devicon.png",
-        "skyline.dataminer.dev.automation.10.3.3.nupkg.sha512",
+        "skyline.dataminer.dev.automation.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.dev.automation.nuspec"
       ]
     },
-    "Skyline.DataMiner.Dev.Common/10.3.3": {
-      "sha512": "sOQjAD4d4ThfN+jjVdkHhq3pQfdhlwIMVbwXiuZEJra3+UgUDuWvhV5QLIqV5GEJW2kvLwP+h2FU9x7WzkWviA==",
+    "Skyline.DataMiner.Dev.Common/10.4.6.1": {
+      "sha512": "q2EPzUDVs/3Cq8flNzVmp6KUUiXgsuVWJ2hcJhek5EIfK6uIAWNivEghl+Hynn9qJdlYNCN5RFqDr4V1FLJiqA==",
       "type": "package",
-      "path": "skyline.dataminer.dev.common/10.3.3",
+      "path": "skyline.dataminer.dev.common/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "docs/README.md",
         "images/devicon.png",
-        "skyline.dataminer.dev.common.10.3.3.nupkg.sha512",
+        "skyline.dataminer.dev.common.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.dev.common.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.protobufnet/10.3.3": {
-      "sha512": "YXmn4JnBWIBE3bgiP9JUNVe/XWSpm8Tm83F6J2wyKS8W9BoV8FCIoI/lrZv17ws3/8/pnQ/bNoxTqM91/5Oc9g==",
+    "Skyline.DataMiner.Files.DataMinerMessageBroker.API/10.4.6.1": {
+      "sha512": "TRgrF76p4Vv9iy3H85k8RGUcpDyrNZ/0MW92VUZEuhqGbnlOvACaFAmri3bzf6L2+ATaZhd3UweOlSnOfgYI5Q==",
       "type": "package",
-      "path": "skyline.dataminer.files.protobufnet/10.3.3",
+      "path": "skyline.dataminer.files.dataminermessagebroker.api/10.4.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "docs/README.md",
+        "images/fileicon.png",
+        "lib/net462/DataMinerMessageBroker.API.dll",
+        "ref/net462/DataMinerMessageBroker.API.dll",
+        "skyline.dataminer.files.dataminermessagebroker.api.10.4.6.1.nupkg.sha512",
+        "skyline.dataminer.files.dataminermessagebroker.api.nuspec"
+      ]
+    },
+    "Skyline.DataMiner.Files.protobufnet/10.4.6.1": {
+      "sha512": "gdPgQubTKxEIkQRjOnieVTVXWLinw9WQDjNn9MK18ZbFK5aF51Si/o6pH1ubj+Sobl/vcVbixJV9BKVckH2H7w==",
+      "type": "package",
+      "path": "skyline.dataminer.files.protobufnet/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -525,14 +1707,14 @@
         "docs/README.md",
         "images/fileicon.png",
         "lib/net462/protobuf-net.dll",
-        "skyline.dataminer.files.protobufnet.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.protobufnet.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.protobufnet.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.3.3": {
-      "sha512": "wYb1saY5+x1XoGLV9rhc59WsegQQ38NgTMo+hPOnhbVhTtvl7Hotwb8SERweMQbNbmGXUaxFHFyAMtQ2VeVFng==",
+    "Skyline.DataMiner.Files.Skyline.DataMiner.Storage.Types/10.4.6.1": {
+      "sha512": "G/O08KBiJF8QqMbdHSxS/N8XKZ9U3d5pKLpaGrp65pcbdGVmIPy9ywlxkhQKfxPV5klG/g1Vw9apRiYCSNs+9g==",
       "type": "package",
-      "path": "skyline.dataminer.files.skyline.dataminer.storage.types/10.3.3",
+      "path": "skyline.dataminer.files.skyline.dataminer.storage.types/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -541,14 +1723,14 @@
         "images/fileicon.png",
         "lib/net462/Skyline.DataMiner.Storage.Types.dll",
         "ref/net462/Skyline.DataMiner.Storage.Types.dll",
-        "skyline.dataminer.files.skyline.dataminer.storage.types.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.skyline.dataminer.storage.types.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.skyline.dataminer.storage.types.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.SLAnalyticsTypes/10.3.3": {
-      "sha512": "E+lzd5MHaos4YvCFdB7c1rlxaf3G5pARbAN/AjREmyEK43GKTKsQTSY+Rmke32TcQ0p2DCWBCfxA/CRrDp/x2g==",
+    "Skyline.DataMiner.Files.SLAnalyticsTypes/10.4.6.1": {
+      "sha512": "hwyMCb0YReCg7H4uXRFvgr0hR3oFLVjpfwEMZsu+jjIUWiJvWILAeYjvhUPzdOrXEEacKd0Yv9eZVu0IY7PXEA==",
       "type": "package",
-      "path": "skyline.dataminer.files.slanalyticstypes/10.3.3",
+      "path": "skyline.dataminer.files.slanalyticstypes/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -556,14 +1738,14 @@
         "docs/README.md",
         "images/fileicon.png",
         "lib/net462/SLAnalyticsTypes.dll",
-        "skyline.dataminer.files.slanalyticstypes.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.slanalyticstypes.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.slanalyticstypes.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.SLLoggerUtil/10.3.3": {
-      "sha512": "Dxwd/vvJT1gUYrm7x1lr+onFmUl6qcJU8dn4wuUBNBLR005K/cUZEybTdbq6GQEStl6QfNgcS6QFvdqJMrfzOA==",
+    "Skyline.DataMiner.Files.SLLoggerUtil/10.4.6.1": {
+      "sha512": "nojz6lZYvNanrnp9rLKYjP+zuXi5L9YCLU53uZ+gSqcJcCSh+I429D12MKc4UdGEIeDceX4WDbbkAALnalfqEw==",
       "type": "package",
-      "path": "skyline.dataminer.files.slloggerutil/10.3.3",
+      "path": "skyline.dataminer.files.slloggerutil/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -572,14 +1754,14 @@
         "images/fileicon.png",
         "lib/net462/SLLoggerUtil.dll",
         "ref/net462/SLLoggerUtil.dll",
-        "skyline.dataminer.files.slloggerutil.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.slloggerutil.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.slloggerutil.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.SLManagedAutomation/10.3.3": {
-      "sha512": "NY16qI3UpmeDTU9KyYUXTF53NAMNGt0nZba3BRJNXGououL2jDRnDKCfcN9vGoYXbLnP6B1cUAP1Us9PuA+aOQ==",
+    "Skyline.DataMiner.Files.SLManagedAutomation/10.4.6.1": {
+      "sha512": "JdxGYNbd6V8MeGkDfaDqsOYJUyeeQyQjzyYvRPiAzRi8MQiC7pJCm5ZssOOVvcIwkBfAOhBcPY3n38h+yvI6kA==",
       "type": "package",
-      "path": "skyline.dataminer.files.slmanagedautomation/10.3.3",
+      "path": "skyline.dataminer.files.slmanagedautomation/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -588,14 +1770,14 @@
         "images/fileicon.png",
         "lib/net462/SLManagedAutomation.dll",
         "lib/net462/SLManagedAutomation.xml",
-        "skyline.dataminer.files.slmanagedautomation.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.slmanagedautomation.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.slmanagedautomation.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.SLNetTypes/10.3.3": {
-      "sha512": "eerC6EqiA0CJlhjVhd+5aeWZkgmRIxhUpg/eNuf0ZY/lEMJ/f8GiYdGgmtWFPV8S9jUQD6DdI89aNtT2iJcX0Q==",
+    "Skyline.DataMiner.Files.SLNetTypes/10.4.6.1": {
+      "sha512": "LzH9+AihV5f8TtkexPcJJC/tEehgiSw6h8oaTo8NksUEvUDoGgYkfDrHVAnH7QtcsEF2tvZn7/HqeCil4FWeYg==",
       "type": "package",
-      "path": "skyline.dataminer.files.slnettypes/10.3.3",
+      "path": "skyline.dataminer.files.slnettypes/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -606,14 +1788,14 @@
         "lib/net462/SLNetTypes.xml",
         "ref/net462/SLNetTypes.dll",
         "ref/net462/SLNetTypes.xml",
-        "skyline.dataminer.files.slnettypes.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.slnettypes.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.slnettypes.nuspec"
       ]
     },
-    "Skyline.DataMiner.Files.SLProtoBufLibrary/10.3.3": {
-      "sha512": "vQxZgEcUtFpwTc6aIwLeF5TJ8lWT5JCR8parPcMKBZt4QLezHTZt0/98reaH0onWIvLIn78ZTC6fXFfV4vTIBw==",
+    "Skyline.DataMiner.Files.SLProtoBufLibrary/10.4.6.1": {
+      "sha512": "95DoU7TYmlrEt0b6lOMbhZ9OCkVgDxzStLvpcPbO8hqbXdbEjmpqFKGevh5njQJpDGTnS0MPkEu3Oc3FYiaQPw==",
       "type": "package",
-      "path": "skyline.dataminer.files.slprotobuflibrary/10.3.3",
+      "path": "skyline.dataminer.files.slprotobuflibrary/10.4.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -621,31 +1803,231 @@
         "docs/README.md",
         "images/fileicon.png",
         "lib/net462/SLProtoBufLibrary.dll",
-        "skyline.dataminer.files.slprotobuflibrary.10.3.3.nupkg.sha512",
+        "skyline.dataminer.files.slprotobuflibrary.10.4.6.1.nupkg.sha512",
         "skyline.dataminer.files.slprotobuflibrary.nuspec"
+      ]
+    },
+    "System.Buffers/4.4.0": {
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+      "type": "package",
+      "path": "system.buffers/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "system.buffers.4.4.0.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Linq.Async/4.0.0": {
+      "sha512": "WbiYEedFZeM+psmMyoCt1AKbZppAZg8Eq1ZTQ+521fGNeXqlgJj0tZYV5n1LsKRO5osQuitYxGNuzPTy3213sg==",
+      "type": "package",
+      "path": "system.linq.async/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/System.Linq.Async.dll",
+        "lib/net461/System.Linq.Async.xml",
+        "lib/netcoreapp3.0/System.Linq.Async.dll",
+        "lib/netcoreapp3.0/System.Linq.Async.xml",
+        "lib/netstandard2.0/System.Linq.Async.dll",
+        "lib/netstandard2.0/System.Linq.Async.xml",
+        "lib/netstandard2.1/System.Linq.Async.dll",
+        "lib/netstandard2.1/System.Linq.Async.xml",
+        "ref/net461/System.Linq.Async.dll",
+        "ref/net461/System.Linq.Async.xml",
+        "ref/netcoreapp3.0/System.Linq.Async.dll",
+        "ref/netcoreapp3.0/System.Linq.Async.xml",
+        "ref/netstandard2.0/System.Linq.Async.dll",
+        "ref/netstandard2.0/System.Linq.Async.xml",
+        "ref/netstandard2.1/System.Linq.Async.dll",
+        "ref/netstandard2.1/System.Linq.Async.xml",
+        "system.linq.async.4.0.0.nupkg.sha512",
+        "system.linq.async.nuspec"
+      ]
+    },
+    "System.Memory/4.5.0": {
+      "sha512": "m0psCSpUxTGfvwyO0i03ajXVhgBqyXlibXz0Mo1dtKGjaHrXFLnuQ8rNBTmWRqbfRjr4eC6Wah4X5FfuFDu5og==",
+      "type": "package",
+      "path": "system.memory/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "lib/uap10.0.16300/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/netstandard1.1/System.Memory.dll",
+        "ref/netstandard1.1/System.Memory.xml",
+        "ref/netstandard2.0/System.Memory.dll",
+        "ref/netstandard2.0/System.Memory.xml",
+        "ref/uap10.0.16300/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.memory.4.5.0.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Numerics.Vectors/4.4.0": {
+      "sha512": "UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.4.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.2": {
+      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.2": [
-      "Skyline.DataMiner.Dev.Automation >= 10.3.3"
+      "CsvHelper >= 31.0.0",
+      "Skyline.DataMiner.Dev.Automation >= 10.4.6.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ronald\\.nuget\\packages\\": {}
+    "C:\\Users\\Ronald\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\devcore3\\gqi\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\CSV_2.csproj",
+      "projectUniqueName": "C:\\devcore3\\gqi-extensions\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\CSV_2.csproj",
       "projectName": "CSV_2",
-      "projectPath": "C:\\devcore3\\gqi\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\CSV_2.csproj",
+      "projectPath": "C:\\devcore3\\gqi-extensions\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\CSV_2.csproj",
       "packagesPath": "C:\\Users\\Ronald\\.nuget\\packages\\",
-      "outputPath": "C:\\devcore3\\gqi\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\obj\\",
+      "outputPath": "C:\\devcore3\\gqi-extensions\\SLC-GQIDS-CSV\\GQIDS-CSV\\CSV_2\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Ronald\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -653,26 +2035,39 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://devcore3:81/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net462": {
           "projectReferences": {}
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net462": {
         "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[31.0.0, )"
+          },
           "Skyline.DataMiner.Dev.Automation": {
             "target": "Package",
-            "version": "[10.3.3, )"
+            "version": "[10.4.6.1, )"
           }
         }
       }
     },
     "runtimes": {
       "win": {
+        "#import": []
+      },
+      "win-arm64": {
         "#import": []
       },
       "win-x64": {
@@ -682,5 +2077,13 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://devcore3:81/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
