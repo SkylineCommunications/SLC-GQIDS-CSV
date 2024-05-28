@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{01BCE923-B243-4950-901B-0483005A5B9F}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\.editorconfig = Internal\.editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{B8A448EF-C654-4F1B-8E71-D4073F874EA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dlls", "Dlls", "{E33D5E20-3E03-401A-99D1-C65F9F981BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompanionFiles", "CompanionFiles", "{D1E29914-BA47-4617-AC1F-DF92B9272299}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skyline DataMiner", "Skyline DataMiner", "{A75E99DC-BF62-41F0-863A-8E6F1CAE0A6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{2D45DF5E-FA3C-4616-B9A2-AA9EB93BDCEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F8938D60-51A0-4880-9CFC-19C66379BB5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{A4311F44-D2F3-4FF7-90DE-921F603F3D8A}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+		Internal\Code Analysis\stylecop.json = Internal\Code Analysis\stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SLC-GQIDS-CSV", "SLC-GQIDS-CSV", "{207E9FE1-FC11-4973-8F6F-8066692DBFB0}"
+	ProjectSection(SolutionItems) = preProject
+		SLC-GQIDS-CSV.xml = SLC-GQIDS-CSV.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{D6C843E2-59A1-4F27-84D2-3F023E9104A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLC-GQIDS-CSV_1", "SLC-GQIDS-CSV_1\SLC-GQIDS-CSV_1.csproj", "{3E08917A-056F-4F15-8026-68DCE4230BA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E08917A-056F-4F15-8026-68DCE4230BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E08917A-056F-4F15-8026-68DCE4230BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E08917A-056F-4F15-8026-68DCE4230BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E08917A-056F-4F15-8026-68DCE4230BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A75E99DC-BF62-41F0-863A-8E6F1CAE0A6E} = {D1E29914-BA47-4617-AC1F-DF92B9272299}
+		{A4311F44-D2F3-4FF7-90DE-921F603F3D8A} = {01BCE923-B243-4950-901B-0483005A5B9F}
+		{207E9FE1-FC11-4973-8F6F-8066692DBFB0} = {B8A448EF-C654-4F1B-8E71-D4073F874EA4}
+		{D6C843E2-59A1-4F27-84D2-3F023E9104A2} = {207E9FE1-FC11-4973-8F6F-8066692DBFB0}
+		{3E08917A-056F-4F15-8026-68DCE4230BA9} = {D6C843E2-59A1-4F27-84D2-3F023E9104A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {420AD56A-2E31-4EA7-AB15-4D7537ECB82D}
+	EndGlobalSection
+EndGlobal
