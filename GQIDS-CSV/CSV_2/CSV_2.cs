@@ -1,5 +1,4 @@
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,13 +8,13 @@ using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 using Skyline.DataMiner.Analytics.GenericInterface;
 
-[GQIMetaData(Name = "From CSV")]
+[GQIMetaData(Name = "Csv file")]
 public class CSVDataSource : IGQIDataSource, IGQIInputArguments, IGQIUpdateable
 {
 	private const string CSV_ROOT_PATH = @"C:\Skyline DataMiner\Documents";
+	private const string FILE_ARGUMENT_NAME = "File";
 
 	private readonly DateTimeConverter _dateTimeConverter;
-	private readonly GQIStringDropdownArgument _fileArgument;
 	private readonly GQIStringArgument _delimiterArgument;
 
 	private HeaderInfo _headerInfo;
@@ -31,12 +30,6 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments, IGQIUpdateable
 	public CSVDataSource()
 	{
 		_dateTimeConverter = new DateTimeConverter();
-
-		var csvFileOptions = GetCsvFileOptions();
-		_fileArgument = new GQIStringDropdownArgument("File", csvFileOptions)
-		{
-			IsRequired = true
-		};
 
 		_delimiterArgument = new GQIStringArgument("Delimiter")
 		{
@@ -63,8 +56,17 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments, IGQIUpdateable
 
 	public GQIArgument[] GetInputArguments()
 	{
+		var csvFileOptions = GetCsvFileOptions();
+		if (csvFileOptions.Length == 0)
+			throw new GenIfException($"No csv files available in '{CSV_ROOT_PATH}'.");
+
+		var fileArgument = new GQIStringDropdownArgument(FILE_ARGUMENT_NAME, csvFileOptions)
+		{
+			IsRequired = true
+		};
+
 		return new GQIArgument[] {
-			_fileArgument,
+			fileArgument,
 			_delimiterArgument,
 		};
 	}
@@ -73,7 +75,9 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments, IGQIUpdateable
 	{
 		_headerInfo = default;
 		_rows = null;
-		var csvFileOption = args.GetArgumentValue(_fileArgument);
+
+		var fileArgument = new GQIStringArgument(FILE_ARGUMENT_NAME);
+		var csvFileOption = args.GetArgumentValue(fileArgument);
 
 		if (string.IsNullOrEmpty(csvFileOption))
 			throw new GenIfException("Missing csv file.");
