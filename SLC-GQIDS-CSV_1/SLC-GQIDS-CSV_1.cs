@@ -14,18 +14,20 @@ using Skyline.DataMiner.Analytics.GenericInterface;
 public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 {
 	private const string CSV_ROOT_PATH = @"C:\Skyline DataMiner\Documents";
+
 	private const string FILE_ARGUMENT_NAME = "File";
 
 	private readonly DateTimeConverter _dateTimeConverter;
+
 	private readonly GQIStringArgument _delimiterArgument;
 
-	private HeaderInfo _headerInfo;
-	private GQIRow[] _rows;
-	private int _rowCount;
 	private string _csvFilePath;
+
 	private string _delimiter;
 
-	private FileSystemWatcher _watcher;
+	private HeaderInfo _headerInfo;
+
+	private GQIRow[] _rows;
 
 	public CSVDataSource()
 	{
@@ -37,21 +39,9 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 		};
 	}
 
-	private static string[] GetCsvFileOptions()
+	public GQIColumn[] GetColumns()
 	{
-		if (!Directory.Exists(CSV_ROOT_PATH))
-			throw new GenIfException($"Csv file root path does not exist: {CSV_ROOT_PATH}");
-
-		return Directory.EnumerateFiles(CSV_ROOT_PATH, "*.csv", SearchOption.AllDirectories)
-			.Select(fileName =>
-			{
-				var relativeFileName = fileName
-					.AsSpan()
-					.Slice(CSV_ROOT_PATH.Length + 1, fileName.Length - CSV_ROOT_PATH.Length - 5)
-					.ToString();
-				return relativeFileName.Replace(@"\", "/");
-			})
-			.ToArray();
+		return _headerInfo.Columns;
 	}
 
 	public GQIArgument[] GetInputArguments()
@@ -70,6 +60,11 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 			fileArgument,
 			_delimiterArgument,
 		};
+	}
+
+	public GQIPage GetNextPage(GetNextPageInputArgs args)
+	{
+		return new GQIPage(_rows);
 	}
 
 	public OnArgumentsProcessedOutputArgs OnArgumentsProcessed(OnArgumentsProcessedInputArgs args)
@@ -93,48 +88,52 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 		if (string.IsNullOrEmpty(_delimiter))
 			_delimiter = ",";
 
-		ReadCSVFile();
+		ReadCsvFile();
 
 		return default;
 	}
 
-	public GQIColumn[] GetColumns()
+	private static GQIColumn GetColumn(string name, string type)
 	{
-		return _headerInfo.Columns;
-	}
-
-	public GQIPage GetNextPage(GetNextPageInputArgs args)
-	{
-		return new GQIPage(_rows);
-	}
-
-
-	private void ReadCSVFile()
-	{
-		var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+		switch (type)
 		{
-			Delimiter = _delimiter,
-		};
-
-		using (var fileStream = new FileStream(_csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete))
-		using (var streamReader = new StreamReader(fileStream))
-		using (var csvReader = new CsvReader(streamReader, config))
-		{
-			csvReader.Read();
-			csvReader.ReadHeader();
-			_headerInfo = GetHeaderInfo(csvReader.HeaderRecord);
-			_rows = ReadRows(csvReader);
-			_rowCount = _rows.Length;
+			case "bool": return new GQIBooleanColumn(name);
+			case "datetime": return new GQIDateTimeColumn(name);
+			case "double": return new GQIDoubleColumn(name);
+			case "int": return new GQIIntColumn(name);
+			default: return new GQIStringColumn(name);
 		}
 	}
 
-	private GQIRow[] ReadRows(CsvReader csvReader)
+	private static (string name, string type) GetColumnInfo(string head)
 	{
-		var columnTypes = _headerInfo.GetColumnTypes();
-		return ReadRows(csvReader, columnTypes);
+		var separatorIndex = head.IndexOf("::");
+		if (separatorIndex == -1)
+			return (head, "string");
+
+		var name = head.Substring(0, separatorIndex);
+		var type = head.Substring(separatorIndex + 2);
+		return (name, type);
 	}
 
-	private HeaderInfo GetHeaderInfo(string[] header)
+	private static string[] GetCsvFileOptions()
+	{
+		if (!Directory.Exists(CSV_ROOT_PATH))
+			throw new GenIfException($"Csv file root path does not exist: {CSV_ROOT_PATH}");
+
+		return Directory.EnumerateFiles(CSV_ROOT_PATH, "*.csv", SearchOption.AllDirectories)
+			.Select(fileName =>
+			{
+				var relativeFileName = fileName
+					.AsSpan()
+					.Slice(CSV_ROOT_PATH.Length + 1, fileName.Length - CSV_ROOT_PATH.Length - 5)
+					.ToString();
+				return relativeFileName.Replace(@"\", "/");
+			})
+			.ToArray();
+	}
+
+	private static HeaderInfo GetHeaderInfo(string[] header)
 	{
 		var keyIndex = -1;
 		var columns = new List<GQIColumn>();
@@ -157,27 +156,46 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 		return new HeaderInfo(keyIndex, columns.ToArray());
 	}
 
-	private GQIColumn GetColumn(string name, string type)
+	private GQICell GetCell(CsvReader reader, int index, Type type)
 	{
-		switch (type)
+		if (type == typeof(DateTime))
 		{
-			case "bool": return new GQIBooleanColumn(name);
-			case "datetime": return new GQIDateTimeColumn(name);
-			case "double": return new GQIDoubleColumn(name);
-			case "int": return new GQIIntColumn(name);
-			default: return new GQIStringColumn(name);
+			var dateTime = reader.GetField<DateTime>(index, _dateTimeConverter);
+			return new GQICell { Value = dateTime };
+		}
+
+		var value = reader.GetField(type, index);
+		return new GQICell { Value = value };
+	}
+
+	private void ReadCsvFile()
+	{
+		var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+		{
+			Delimiter = _delimiter,
+		};
+
+		using (var fileStream = new FileStream(_csvFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete))
+		using (var streamReader = new StreamReader(fileStream))
+		using (var csvReader = new CsvReader(streamReader, config))
+		{
+			csvReader.Read();
+			csvReader.ReadHeader();
+			_headerInfo = GetHeaderInfo(csvReader.HeaderRecord);
+			_rows = ReadRows(csvReader);
 		}
 	}
 
-	private (string name, string type) GetColumnInfo(string head)
+	private GQIRow ReadRow(CsvReader reader, Type[] columnTypes)
 	{
-		var separatorIndex = head.IndexOf("::");
-		if (separatorIndex == -1)
-			return (head, "string");
+		var cells = columnTypes.Select((type, index) => GetCell(reader, index, type));
+		return new GQIRow(cells.ToArray());
+	}
 
-		var name = head.Substring(0, separatorIndex);
-		var type = head.Substring(separatorIndex + 2);
-		return (name, type);
+	private GQIRow[] ReadRows(CsvReader csvReader)
+	{
+		var columnTypes = _headerInfo.GetColumnTypes();
+		return ReadRows(csvReader, columnTypes);
 	}
 
 	private GQIRow[] ReadRows(CsvReader reader, Type[] columnTypes)
@@ -192,61 +210,15 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 		return rows.ToArray();
 	}
 
-	private GQIRow ReadRow(CsvReader reader, Type[] columnTypes)
-	{
-		var cells = columnTypes.Select((type, index) => GetCell(reader, index, type));
-		return new GQIRow(cells.ToArray());
-	}
-
-	private GQICell GetCell(CsvReader reader, int index, Type type)
-	{
-		if (type == typeof(DateTime))
-		{
-			var dateTime = reader.GetField<DateTime>(index, _dateTimeConverter);
-			return new GQICell() { Value = dateTime };
-		}
-
-		var value = reader.GetField(type, index);
-		return new GQICell() { Value = value };
-	}
-
-	private class HeaderInfo
-	{
-		public int KeyIndex { get; }
-
-		public GQIColumn[] Columns { get; }
-
-		public HeaderInfo(int keyIndex, GQIColumn[] columns)
-		{
-			KeyIndex = keyIndex;
-			Columns = columns;
-		}
-
-		public Type[] GetColumnTypes()
-		{
-			return Columns.Select(column => GetColumnType(column.Type)).ToArray();
-		}
-
-		private Type GetColumnType(GQIColumnType type)
-		{
-			switch (type)
-			{
-				case GQIColumnType.Boolean: return typeof(bool);
-				case GQIColumnType.DateTime: return typeof(DateTime);
-				case GQIColumnType.Double: return typeof(double);
-				case GQIColumnType.Int: return typeof(int);
-				default: return typeof(string);
-			}
-		}
-	}
-
-	private class DateTimeConverter : ITypeConverter
+	private sealed class DateTimeConverter : ITypeConverter
 	{
 		public object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
 		{
 			try
 			{
-				return DateTime.SpecifyKind(DateTime.Parse(text), DateTimeKind.Utc);
+				DateTime dateTime = DateTime.Parse(text, CultureInfo.InvariantCulture);
+
+				return DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
 			}
 			catch (FormatException)
 			{
@@ -257,6 +229,36 @@ public class CSVDataSource : IGQIDataSource, IGQIInputArguments
 		public string ConvertToString(object value, IWriterRow row, MemberMapData memberMapData)
 		{
 			return value.ToString();
+		}
+	}
+
+	private sealed class HeaderInfo
+	{
+		public HeaderInfo(int keyIndex, GQIColumn[] columns)
+		{
+			KeyIndex = keyIndex;
+			Columns = columns;
+		}
+
+		public GQIColumn[] Columns { get; }
+
+		public int KeyIndex { get; }
+
+		public Type[] GetColumnTypes()
+		{
+			return Columns.Select(column => GetColumnType(column.Type)).ToArray();
+		}
+
+		private static Type GetColumnType(GQIColumnType type)
+		{
+			switch (type)
+			{
+				case GQIColumnType.Boolean: return typeof(bool);
+				case GQIColumnType.DateTime: return typeof(DateTime);
+				case GQIColumnType.Double: return typeof(double);
+				case GQIColumnType.Int: return typeof(int);
+				default: return typeof(string);
+			}
 		}
 	}
 }
